@@ -46,7 +46,7 @@ body.theme-light {
     -webkit-background-clip: text;
     color: transparent;
     animation: gradient 3s ease infinite;
-    font-family: 'SetupMono', Arial, sans-serif;
+    font-family: 'SetupPro', Arial, sans-serif;
 }
 
 @keyframes gradient {

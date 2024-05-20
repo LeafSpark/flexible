@@ -1,0 +1,26 @@
+<div id="settings-popup" class="popup hidden">
+    <div class="popup-content">
+        <span class="close-btn">&times;</span>
+        <h2>Settings</h2>
+        <form id="settings-form">
+            <div class="form-group">
+                <label for="default-landing">Default Landing Page:</label>
+                <input type="text" id="default-landing" name="default-landing">
+            </div>
+            <div class="form-group">
+                <label for="backend-endpoint">Backend Endpoint:</label>
+                <input type="text" id="backend-endpoint" name="backend-endpoint">
+            </div>
+            <div class="form-group">
+                <label>Theme:</label>
+                <div class="theme-selection">
+                    <input type="radio" id="theme-dark" name="theme" value="dark">
+                    <label for="theme-dark">Dark</label>
+                    <input type="radio" id="theme-light" name="theme" value="light">
+                    <label for="theme-light">Light</label>
+                </div>
+            </div>
+            <button type="button" class="save-btn">Save</button>
+        </form>
+    </div>
+</div>

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat Interface</title>
+    <link rel="stylesheet" href="../settings/styles.css"> <!-- Fetch settings CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -22,6 +23,8 @@
                     <option value="ollama">Ollama</option>
                 </select>
             </div>
+            <button class="settings-button" id="open-settings-btn" aria-label="Open Settings">⚙️</button>
+            <!-- Settings button -->
         </div>
         <div class="chat-window">
             <!-- Messages will be appended here -->
@@ -31,38 +34,12 @@
             <button id="send-button">Send</button>
         </div>
     </div>
-    <script>
-        document.getElementById('send-button').addEventListener('click', () => {
-            const chatInput = document.getElementById('chat-input');
-            const chatWindow = document.querySelector('.chat-window');
-            const message = chatInput.value.trim();
 
-            if (!message) return;
+    <!-- Settings popup (will be fetched via JS) -->
+    <div id="settings-container"></div>
 
-            // Create and append user's message
-            const userMessage = document.createElement('div');
-            userMessage.className = 'message user-message';
-            userMessage.textContent = message;
-            chatWindow.appendChild(userMessage);
-
-            // Clear input box
-            chatInput.value = '';
-
-            // Scroll to bottom of chat window
-            chatWindow.scrollTop = chatWindow.scrollHeight;
-
-            // Simulate AI response
-            setTimeout(() => {
-                const aiMessage = document.createElement('div');
-                aiMessage.className = 'message ai-message';
-                aiMessage.textContent = `AI Response to: ${message}`;
-                chatWindow.appendChild(aiMessage);
-
-                // Scroll to bottom of chat window
-                chatWindow.scrollTop = chatWindow.scrollHeight;
-            }, 1000);
-        });
-    </script>
+    <script src="script.js"></script>
+    <script src="../settings/script.js"></script> <!-- Fetch settings JS -->
 </body>
 
 </html>
