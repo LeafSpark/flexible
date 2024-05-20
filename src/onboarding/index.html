@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flexible.chat</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Welcome to flexible.chat</h1>
+        <p>Your one-stop solution for talking to LLMs, in style.</p>
+        <button class="start-btn">Continue</button>
+    </div>
+    <script>
+        document.querySelector('.start-btn').addEventListener('click', function () {
+            document.querySelector('.container').classList.add('slide-up');
+            setTimeout(function () {
+                window.location.href = './setup/index.html';
+            }, 1000); // Animation duration
+        });
+    </script>
+</body>
+
+</html>

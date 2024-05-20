@@ -1,0 +1,41 @@
+<body>
+    <div class="header">
+        <h1>Setup</h1>
+    </div>
+    <h2>Set API keys for each provider</h2>
+    <form id="provider-form">
+        <div class="form-group">
+            <label for="anthropic-key">Anthropic:</label>
+            <input type="password" id="anthropic-key" name="anthropic">
+        </div>
+        <div class="form-group">
+            <label for="openai-key">OpenAI:</label>
+            <input type="password" id="openai-key" name="openai">
+        </div>
+        <div class="form-group">
+            <label for="google-key">Google:</label>
+            <input type="password" id="google-key" name="google">
+        </div>
+        <div class="form-group">
+            <label for="ollama-key">Ollama:</label>
+            <input type="password" id="ollama-key" name="ollama">
+        </div>
+        <div id="openai-compatible-container">
+            <h3>OpenAI Compatible Providers</h3>
+            <div class="form-group provider-field">
+                <label for="provider-name-1">Provider Name:</label>
+                <input type="text" id="provider-name-1" name="provider-name" required>
+
+                <label for="provider-key-1">API Key:</label>
+                <input type="password" id="provider-key-1" name="provider-key" required>
+
+                <label for="provider-url-1">URL:</label>
+                <input type="text" id="provider-url-1" name="provider-url" required>
+
+                <button type="button" class="remove-provider-btn">Remove</button>
+            </div>
+        </div>
+        <button type="button" id="add-provider-btn" class="material-green">Add Another OpenAI-Compatible
+            Provider</button>
+    </form>
+</body>

@@ -1,0 +1,94 @@
+/* Body and Container Styles */
+body {
+    background-color: #121212;
+    color: #FFFFFF;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    /* To prevent scrollbars during animation */
+}
+
+.container {
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
+    transition: transform 1s ease, opacity 1s ease;
+}
+
+.container.slide-up {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+/* Button Styles */
+.start-btn {
+    color: white;
+    padding: 15px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    background-size: 200% 200%;
+    background-image: linear-gradient(270deg, #1e3c72, #2a5298, #1e3c72);
+    animation: gradientMove 4s ease infinite;
+}
+
+.start-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Text Styles with Gradient for H1 */
+h1 {
+    font-size: 2.5rem;
+    background: linear-gradient(to right, #FF7E5F, #FFB88C);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: slideIn 1s ease-out;
+}
+
+p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    animation: slideIn 1.2s ease-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}

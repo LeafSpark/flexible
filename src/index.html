@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flexible.chat</title>
+</head>
+
+<body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Check and set default values in localStorage if they do not exist
+            if (localStorage.getItem('onboarding') === null) {
+                localStorage.setItem('onboarding', 'true');
+            }
+            if (localStorage.getItem('inProgress') === null) {
+                localStorage.setItem('inProgress', 'false');
+            }
+            if (localStorage.getItem('location') === null) {
+                localStorage.setItem('location', '-1');
+            }
+
+            // Retrieve localStorage values
+            const onboarding = JSON.parse(localStorage.getItem('onboarding'));
+            const inProgress = localStorage.getItem('inProgress');
+            const location = localStorage.getItem('location') || '-1';
+
+            // Redirect based on localStorage values
+            if (onboarding === true) {
+                window.location.href = './onboarding/index.html';
+            } else if (inProgress === true) {
+                window.location.href = `./onboarding/setup/index.html?l=${location}`;
+            } else {
+                const default_landing = localStorage.getItem('default_landing') || './chat/index.html';
+                window.location.href = default_landing;
+            }
+        });
+    </script>
+</body>
+
+</html>

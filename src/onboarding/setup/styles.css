@@ -1,0 +1,246 @@
+@font-face {
+    font-family: 'SetupMono';
+    src: url('../../assets/berkeley-mono-variable-2.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'SetupPro';
+    src: url('../../assets/sf-pro-text-9.ttf') format('truetype');
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    overflow-y: auto;
+    /* Enable vertical scrolling */
+    font-family: 'SetupPro', Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    /* Allow scrollability */
+    background-color: #f7f7f7;
+}
+
+body.theme-dark {
+    background-color: #121212;
+    color: white;
+}
+
+body.theme-light {
+    background-color: #ffffff;
+    color: black;
+}
+
+.header {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 5rem;
+    background: linear-gradient(-45deg, #ff9800, #ffc107, #ff9800, #ffc107);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: gradient 3s ease infinite;
+    font-family: 'SetupMono', Arial, sans-serif;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+h1 {
+    font-size: 5rem;
+}
+
+h2 {
+    text-align: center;
+}
+
+h3 {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.progress-container {
+    width: 80%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.progress-bar {
+    width: 100%;
+    background-color: #333;
+    border-radius: 5px;
+    height: 20px;
+    overflow: hidden;
+}
+
+body.theme-light .progress-bar {
+    background-color: #ccc;
+}
+
+.progress {
+    height: 100%;
+    width: 0;
+    background-color: #76c7c0;
+    background-image: linear-gradient(to right, #43cea2, #185a9d);
+    transition: width 0.3s ease;
+}
+
+.steps {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.step {
+    color: #999;
+    font-size: 1.2rem;
+    text-align: center;
+    flex: 1;
+}
+
+.step.active {
+    color: #76c7c0;
+}
+
+.content {
+    width: 80%;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.form-group {
+    width: 80%;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    /* Align items side by side */
+}
+
+.form-group label {
+    flex: 0 0 150px;
+    /* Label takes 150px width */
+    margin-right: 10px;
+    font-size: 1rem;
+    text-align: right;
+    /* Align label text to the right */
+}
+
+.form-group input,
+.form-group select {
+    flex: 1;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #222;
+    color: white;
+}
+
+body.theme-light .form-group input,
+body.theme-light .form-group select {
+    background-color: #fff;
+    color: black;
+    border: 1px solid #ccc;
+}
+
+.continue-btn {
+    margin-top: 20px;
+    padding: 15px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #185a9d;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+body.theme-light .continue-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+.continue-btn:hover {
+    transform: scale(1.1);
+}
+
+.material-green {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.material-green:hover {
+    background-color: #45a049;
+}
+
+.remove-provider-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-left: 10px;
+    /* Ensure spacing for the button */
+    transition: background-color 0.3s ease;
+}
+
+.remove-provider-btn:hover {
+    background-color: #e53935;
+}
+
+/* Additions for Theme Selection */
+.theme-selection {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.theme-selection label {
+    font-size: 1.5rem;
+    padding: 20px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.theme-selection input[type="radio"] {
+    display: none;
+    /* Hide the radio buttons */
+}
+
+.theme-selection input[type="radio"]:checked+label {
+    border-color: #76c7c0;
+    /* Highlight the selected label */
+    transform: scale(1.1);
+}
